@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
-:root {
-  --color-cyan: hsl(179, 62%, 43%);
-  --color-brightYellow: hsl(71, 73%, 54%);
-  --color-lightGrey: hsl(204, 43%, 93%);
-  --color-grayishBlue: hsl(218, 22%, 67%);
-  --color-lightCyan: hsl(179, 62%, 46%);
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -20,12 +12,26 @@ html {
 a {
   text-decoration: none;
 }
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .cta {
+  width: 220px;
+  height: 50px;
   display: inline-block;
   padding: 10px 30px;
   color: white;
   background-color: transparent;
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin-top: 36px;
@@ -34,13 +40,6 @@ a {
 }
 
 /* Header section */
-.container {
-  position: relative;
-  margin: 35px auto 0;
-  width: 300px;
-  height: 534px;
-  overflow: hidden;
-}
 
 /* Toggle functionality */
 #toggle {
@@ -206,3 +205,241 @@ a {
 }
 
 /* End Header section */
+
+/* Hero Section */
+#hero {
+  background-image: url(./img/Technology.jpg);
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  /* sets the z-order of a positioned element and its descendants or flex items */
+  /* z-index: 1; */
+}
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+#hero .hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+#hero h1 {
+  display: block;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+#hero h1:nth-child(1) {
+  animation-delay: 1s;
+}
+#hero h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#hero h1:nth-child(3) {
+  animation: text_reveal_name 0.5s ease forwards;
+  animation-delay: 3s;
+}
+#hero h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #e0532f;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+#hero h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+/* End Hero Section */
+
+.cta {
+  position: relative;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.cta:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.cta:active {
+  color: #000;
+}
+.cta:active:after {
+  background: transparent;
+}
+.cta:hover:before {
+  opacity: 1;
+}
+.cta:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+/* End Hero Section */
+
+/* Price section */
+#grid-container {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  top: 80px;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+#top {
+  padding: 2rem;
+}
+#top h1 {
+  color: rgb(240, 102, 22);
+  padding: 4rem auto;
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+#top h3 {
+  color: rgb(240, 102, 22);
+  padding: 2rem;
+}
+#bottom {
+  display: flex;
+  grid-template-columns: repeat(3 1fr);
+}
+#left,
+#middle,
+#right {
+  color: white;
+  position: relative;
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s ease box-shadow;
+  box-shadow: 0 0 18px 0 #0000002c;
+}
+#left:hover,
+#middle:hover,
+#right:hover {
+  box-shadow: 0 0 5px 0 #0000002c;
+}
+
+#bottom h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+#bottom ul {
+  padding: 2rem;
+  margin: 0 auto;
+}
+#bottom #left {
+  background-color: plum;
+}
+#bottom #middle {
+  background-color: orange;
+}
+#bottom #right {
+  background-color: green;
+}
+ul,
+li {
+  list-style-type: none;
+  text-align: left;
+}
+
+/* Keyframes */
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+@keyframes text_reveal_name {
+  100% {
+    color: #e0532f;
+    font-weight: 600;
+  }
+}
+/* End Keyframes */

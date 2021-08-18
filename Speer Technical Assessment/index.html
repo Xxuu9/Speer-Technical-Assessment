@@ -10,26 +10,88 @@
 </head>
 
 <body>
-     <!-- Header -->
-     <section id="header">
-        <div class="nav-list">
-            <div class="hamburger">
-                <input id="toggle" type="checkbox">
-                <label class="toggle-container" for="toggle">
-                    <!-- When the menu is open, it will turned to a "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
-                    <span class="button button-toggle"></span>
-                </label>
-                <nav class="nav">
-                    <a class="nav-item" href="#about">About</a>
-                    <a class="nav-item" href="#price">Price</a>
-                    <a class="nav-item" href="#contact">Contact</a>
-                </nav>
-            </div>
+<!-- Header -->
+<section id="header">
+    <div class="nav-list">
+        <div class="hamburger">
+            <input id="toggle" type="checkbox">
+            <label class="toggle-container" for="toggle">
+                <!-- When the menu is open, it will turned to a "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
+                <span class="button button-toggle"></span>
+            </label>
+            <nav class="nav">
+                <a class="nav-item" href="#about">About</a>
+                <a class="nav-item" href="#grid-container">Price</a>
+                <a class="nav-item" href="#contact">Contact</a>
+            </nav>
         </div>
-    </section>
-    <!-- End Header -->
+    </div>
+</section>
+<!-- End Header -->
+
+<!-- Hero section -->
+<section id="hero">
+    <div class="hero container">
+        <div>
+            <h1>We build<span></span></h1>
+            <h1>We design<span></span></h1>
+            <h1>We innovate<span></span></h1>
+            <a href="#price" type="button" class="cta cta1">TRY IT NOW</a>
+            <!-- <a href="#price" type="button" class="cta cta2">Price</a> -->
+        </div>
+    </div>
+</section>
+<!-- End Hero section -->
 
 
+<!-- Price section -->
+<div id="grid-container">
+    <div id="top">
+        <h1>Pricing</h1>
+        <h3>Test out our app today! Choose from three subsription Based payment models</h3>
+    </div>
+<div id="bottom">
+    <div id="left">
+        <h3>BASIC MONTHLY</h3>
+        <div class="price"><span id="number">&dollar;9</span> per month</div>
+        <ul>
+            <li>&#127925; Very good</li>
+            <li>&#127925; Amazing</li>
+            <li>&#127925; Perfect job</li>
+            <li>&#127925; Love this</li>
+            <li>&#127925; Features</li>
+        </ul>
+        <button class="cta select1">SELECT</button>
+    </div>
+    <div id="middle">
+        <h3>ADVANCED YEARLY</h3>
+        <div class="price"><span id="number">&dollar;99</span> per month</div>
+        <ul>
+            <li>&#127931; Very very good</li>
+            <li>&#127931; Even Amazing</li>
+            <li>&#127931; Perfect job</li>
+            <li>&#127931; Love this more</li>
+            <li>&#127931; Features</li>
+        </ul>
+        <button class="cta select2">SELECT</button>
+    </div>
+
+    <div id="right">
+        <h3>PRO YEARLY</h3>
+        <div class="price"><span id="number">&dollar;120</span> per month</div>
+        <ul>
+            <li>&#127928; Very very good</li>
+            <li>&#127928; Even more Amazing</li>
+            <li>&#127928; Perfect job</li>
+            <li>&#127928; Love this more</li>
+            <li>&#127928; More Features</li>
+        </ul>
+        <button class="cta select3">SELECT</button>
+    </div>
+  </div>
+</div>
+
+<!-- End Price section -->
 
 </body>
 <script src="script.js"></script>
